@@ -1,11 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    aaa
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Block Jam – VR Puzzle Game</title>
+    <style>
+      :root {
+        --accent: #ffffff;
+        --bg: #111111;
+        --text: #e0e0e0;
+        --muted: #888888;
+        --button-bg: #ffffff;
+        --button-text: #000000;
+        --light-bg: #f1f1f1;
+        --dark-bg: #333333;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      header {
+        padding: 4rem 2rem 2rem;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 4rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      header p {
+        font-size: 1.25rem;
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      main {
+        margin: 0 auto;
+      }
+
+      .section {
+        min-width: 1140px;
+        min-height: 500px;
+        padding: 2rem;
+        padding-left: 25rem;
+        padding-right: 25rem;
+        
+      }
+
+      .section-title{
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #212529;
+      }
+    
+      .text {
+        color: #212529;
+        font-size: 1.5rem;
+      }
+
+      /* Renk değişimi için arka plan renkleri */
+      .section:nth-child(odd) {
+        background-color: rgb(223 223 223);
+      }
+
+      .section:nth-child(even) {
+        background-color: rgb(255 255 255);
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      ul li::before {
+        content: "\2022";
+        color: var(--accent);
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+
+      .button-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo{
+        width: 250px;
+        height: 250px;
+      }
+
+      .play-button {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .play-button:hover {
+        background-color: #dddddd;
+      }
+
+      .play-button img {
+        width: 50px;
+        height: 33px;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+      }
+
+      .gallery {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      /* Küçük resimler için boyutlandırma */
+      .gallery img {
+        width: 100%;
+        height: auto; /* Yükseklik orantılı olarak ayarlanır */
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Modaldeki büyük resim için boyutlandırma */
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+
+      /* Modalde resimlerin düzgün görünmesi için */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal:target {
+        display: flex;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--muted);
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="section">
+        <h1 class="section-title">Block Jam</h1>
+        <div style="display: flex; align-items: center;">
+          <img  style="margin-right: 20px;" class="logo" src="img/Logo/logo-transparent.png" alt="Screenshot 1" />
+          <p class="text">The Ultimate VR Cube Shifting Challenge – Grab, slide, and clear complex 3D formations using your hands in a calming, minimalistic VR experience.</p>
+        </div>
+
+        
+        <div class="button-section">
+          <a class="play-button" href="https://www.meta.com/experiences/block-jam/10002051003147574/" target="_blank">
+            <img  class="text" src="img/meta-icon.png" alt="Meta Icon" />
+            Buy on Meta Quest
+          </a>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">About Block Jam</h2>
+        <p class="text">Grab a cube, find the correct direction, and slide it out without getting blocked. Think ahead, plan your moves, and dismantle the formation piece by piece. Precision and spatial logic are your best tools. Easy to pick up, tough to master.</p>
+
+        <ul>
+          <li class="text">70+ handcrafted puzzles with increasing complexity</li>
+          <li class="text">Intuitive <strong>hand tracking</strong> – play with just your hands</li>
+          <li class="text"><strong>Mixed Reality passthrough</strong> – blend your room with gameplay</li>
+          <li class="text">Minimal, calming visual design</li>
+          <li class="text">Flexible play: standing, sitting, or lying down</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery">
+          <a href="#img1"><img src="img/Screenshots/Image1.png" alt="Screenshot 1" /></a>
+          <a href="#img2"><img src="img/Screenshots/Image2.jpg" alt="Screenshot 2" /></a>
+          <a href="#img3"><img src="img/Screenshots/Image3.png" alt="Screenshot 3" /></a>
+          <a href="#img4"><img src="img/Screenshots/Image4.png" alt="Screenshot 4" /></a>
+          <a href="#img5"><img src="img/Screenshots/Image5.png" alt="Screenshot 5" /></a>
+        </div>
+
+        <!-- Modal sections -->
+        <div id="img1" class="modal" onclick="location.href='#';">
+          <img src="img/Screenshots/Image1.png" alt="Full Screenshot 1" />
+        </div>
+        <div id="img2" class="modal" onclick="location.href='#';">
+          <img src="img/Screenshots/Image2.jpg" alt="Full Screenshot 2" />
+        </div>
+        <div id="img3" class="modal" onclick="location.href='#';">
+          <img src="img/Screenshots/Image3.png" alt="Full Screenshot 3" />
+        </div>
+        <div id="img4" class="modal" onclick="location.href='#';">
+          <img src="img/Screenshots/Image4.png" alt="Full Screenshot 4" />
+        </div>
+        <div id="img5" class="modal" onclick="location.href='#';">
+          <img src="img/Screenshots/Image5.png" alt="Full Screenshot 5" />
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Contact</h2>
+        <p class="text">
+          📧 <a href="mailto:yldrm.kaan124@gmail.com" style="color: #212529; text-decoration: underline;">
+            yldrm.kaan124@gmail.com
+          </a>
+        </p>
+      </div>
+    </main>
+
+
+    <footer>
+      © 2025 Block Jam. All rights reserved.
+    </footer>
+  </body>
 </html>
